@@ -1,0 +1,404 @@
+@font-face {
+	font-family: Gotham;
+	src: url('../fonts/Gotham-Book.otf');
+}
+
+html {
+	font-family: Gotham;
+	font-size: 16px;
+	color: #c0c0c0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#knob_wrapper
+{
+	position: relative;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	height: 300px;
+}
+
+#screen_capture { display: block;}
+#screen_preview { display: block;}
+#screen_validated { display: none;}
+
+#notifications {
+	z-index: 999999;
+	position: absolute;
+	box-sizing: border-box;
+	top : 10%;
+	right: 0;
+	max-width: 85%;
+	background-color: green;
+	transform: translate3d(100%, 0, 0);
+	transition: transform ease-out 250ms;
+	-webkit-transition: transform ease-out 250ms;
+	-moz-transition: transform ease-out 250ms;
+	-o-transition: transform ease-out 250ms;
+	opacity: 0;
+}
+#notifications.show {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+	transition: transform ease-out 250ms;
+	-webkit-transition: transform ease-out 250ms;
+	-moz-transition: transform ease-out 250ms;
+	-o-transition: transform ease-out 250ms;
+}
+
+
+#notifications span {
+	display: block;
+	box-sizing: border-box;
+	padding: 10px 15px;
+	font-size: 0.65rem;
+	color: white;
+}
+
+#lion-background {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: white;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 999;
+}
+
+#lion-background .wrapper-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+#lion-background .wrapper-logo .lion {
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+	background: url('../assets/lion.svg') center no-repeat;
+	background-size: contain;
+}
+
+#lion-background .wrapper-logo .logo {
+	width: 125px;
+	height: 50px;
+	margin: 10px auto 0 auto;
+	background: url('../assets/publicislogo.svg') center no-repeat;
+	background-size: contain;
+}
+/**
+	* SCREEN_CAPTURE
+**/
+#screen_capture {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+}
+
+#screen_capture.show {
+	opacity: 1;
+}
+
+#screen_capture .btn-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+#screen_capture .btn-wrapper .btn-capture {
+	width: 75px;
+	height: 75px;
+	background-color: white;
+	border: solid 2px grey;
+	border-radius: 50%;
+	position: relative;
+	margin: 0 auto;
+	box-sizing: border-box;
+	display: block;
+}
+
+#screen_capture .btn-wrapper .btn-capture::after {
+	content: "";
+	display: block;
+	width: 56px;
+	height: 56px;
+	background-color: grey;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	margin-left: -28px;
+	margin-bottom: -28px;
+}
+
+#screen_capture .btn-wrapper .btn-capture.active::after {
+	background-color: green;
+}
+
+#screen_capture .btn-wrapper .btn-capture.active {
+	border-color: green;
+}
+
+#screen_capture .btn-wrapper p {
+	font-size: 0.75rem;
+	line-height: 1.2rem;
+	text-transform: uppercase;
+	color: grey;
+	text-align: center;
+	margin: 5% 0 0 0;
+}
+
+/**
+	* SCREEN_PREVIEW
+**/
+#screen_preview {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	display: none;
+}
+
+#screen_preview.show {
+	opacity: 1;
+	display: block;
+}
+
+#screen_preview .photo-preview-big {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom:0;
+	background: url(http://placehold.it/800x800) no-repeat center fixed;
+	background-size: cover;
+}
+
+#screen_preview .btn-wrapper-bottom {
+	position: absolute;
+	height: 20%;
+	min-height: 140px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+#screen_preview .btn-wrapper-bottom .btn {
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	background-color: white;
+	position: relative;
+	box-sizing: border-box;
+}
+
+#screen_preview .btn-wrapper-bottom .btn-restart {
+	position: absolute;
+	left: 35%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+#screen_preview .btn-wrapper-bottom .btn-validate {
+	position: absolute;
+	right: 35%;
+	top: 50%;
+	transform: translate3d(50%, -50%, 0);
+}
+
+#screen_preview .btn-wrapper-bottom .btn-restart svg {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 45px;
+	height: 40px;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+#screen_preview .btn-wrapper-bottom .btn-validate svg {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 37px;
+	height: 37px;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+/**
+	* SCREEN_VALIDATED
+**/
+#screen_validated {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+	opacity: 0;
+}
+
+#screen_validated.show {
+	display: block;
+	opacity: 1;
+}
+
+#screen_validated .photo-preview-small {
+	width: 75%;
+	max-width: 460px;
+	height: 60%;
+	max-height: 580px;
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	transform: translate3d(-50%, -50%, 0);
+	background: url(http://placehold.it/800x800) no-repeat center ;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#screen_validated .btn-wrapper-bottom {
+	position: absolute;
+	height: 20%;
+	min-height: 140px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+#screen_validated .btn-wrapper-bottom .btn {
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	border: solid 2px grey;
+	position: relative;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+#screen_validated .btn-download {
+	width: 100px;
+	position: absolute;
+	left: 35%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	text-align: center;
+	display: block;
+	color: grey;
+}
+
+#screen_validated .btn-share {
+	width: 100px;
+	position: absolute;
+	right: 35%;
+	top: 50%;
+	transform: translate3d(50%, -50%, 0);
+	text-align: center;
+}
+
+#screen_validated .btn-wrapper-bottom .btn-download svg {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 36px;
+	height: 32px;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+#screen_validated .btn-wrapper-bottom .btn-share svg {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 28px;
+	height: 30px;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+#screen_validated .btn-wrapper-bottom span {
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	margin-top: 0.75rem;
+	display: inline-block;;
+}
+
+#preview {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	opacity: 0;
+}
+
+#preview {
+	background: center no-repeat;
+	background-size: contain;
+	/*transition: opacity 1s ease-out;
+	-webkit-transition: opacity 1s ease-out;
+	-moz-transition: opacity 1s ease-out;
+	-o-transition: opacity 1s ease-out;*/
+}
+
+#preview.show {
+	opacity: 1;
+	/*transition: opacity 1s ease-out;
+	-webkit-transition: opacity 1s ease-out;
+	-moz-transition: opacity 1s ease-out;
+	-o-transition: opacity 1s ease-out;*/
+}
+
+#gallery {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+div[class^="photo-"] {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('http://placehold.it/800x800') center no-repeat;
+	background-size: contain;
+	opacity: 0;
+	/*transition: opacity 1s ease-out;
+	-webkit-transition: opacity 1s ease-out;
+	-moz-transition: opacity 1s ease-out;
+	-o-transition: opacity 1s ease-out;*/
+}
+
+div[class^="photo-"].show {
+	opacity: 1;
+	/*transition: opacity 1s ease-out;
+	-webkit-transition: opacity 1s ease-out;
+	-moz-transition: opacity 1s ease-out;
+	-o-transition: opacity 1s ease-out;*/
+}

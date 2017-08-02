@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Photobooth</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/global.css">
+	<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+
+	<!--[if lt IE 7]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<div id="notifications"><span>Vous n'avez plus d'essais</span></div>
+
+	<div id="lion-background">
+		<div class="wrapper-logo">
+			<div class="lion"></div>
+			<div class="logo"></div>
+		</div>
+	</div>
+
+	<div id="screen_capture" class="show">
+		<div class="btn-wrapper">
+			<a href="/capture" class="btn-capture"></a>
+			<p>Vous êtes placé <b><span class="user-current-place"></span> / <span class="total-users"></span></b> dans la file d'attente</p>
+		</div>
+	</div>
+
+	<div id="screen_preview">
+		<div class="photo-preview-big"></div>
+		<div class="btn-wrapper-bottom">
+			<div class="btn btn-restart">
+				<svg width="89px" height="81px" viewBox="0 0 89 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+						<g id="03_Photo_taken" transform="translate(-229.000000, -1152.000000)" stroke="#FF0606" stroke-width="4">
+							<g id="Group" transform="translate(195.000000, 1117.000000)">
+								<g id="Group-3" transform="translate(27.000000, 28.000000)">
+									<path d="M48.693113,87.0976119 C85.1632903,87.0976119 87.3919867,53.5415122 87.3919867,48.2580645 C87.3919867,26.7367749 69.9794512,9.29032258 48.5,9.29032258 C27.0205488,9.29032258 9.60801328,26.7367749 9.60801328,48.2580645" id="Oval-4" stroke-linecap="round" transform="translate(48.500000, 48.193967) rotate(-75.000000) translate(-48.500000, -48.193967) "></path>
+									<polygon id="Triangle" fill="#FF0606" transform="translate(78.959978, 68.657147) rotate(209.000000) translate(-78.959978, -68.657147) " points="89.4610553 79.1786782 68.4589017 79.1786782 78.9599785 58.1356159"></polygon>
+								</g>
+							</g>
+						</g>
+					</g>
+				</svg>
+			</div>
+			<div class="btn btn-validate">
+				<svg width="86px" height="58px" viewBox="0 0 86 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+						<g id="03_Photo_taken" transform="translate(-434.000000, -1171.000000)" stroke-width="4" stroke="#FF0606">
+							<g id="Group" transform="translate(195.000000, 1117.000000)">
+								<g id="Group-2" transform="translate(209.000000, 0.000000)">
+									<polyline id="Path-2" points="32.3260255 80.1546204 61.3172086 109.145804 113.963012 56.5"></polyline>
+								</g>
+							</g>
+						</g>
+					</g>
+				</svg>
+			</div>
+		</div>
+	</div>
+
+	<div id="screen_validated">
+		<div class="photo-preview-small"></div>
+		<div class="btn-wrapper-bottom">
+			<a href="/download" class="btn-download">
+				<div class="btn">
+					<svg width="73px" height="64px" viewBox="0 0 73 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+							<g id="04_share" transform="translate(-236.000000, -1050.000000)" stroke="#FF0606">
+								<g id="Group-7" transform="translate(200.000000, 1014.000000)">
+									<g id="Group-2" transform="translate(38.000000, 38.000000)">
+										<g id="Group-3" transform="translate(24.524096, 34.931507)" stroke-width="3" fill="#FF0606">
+											<polygon id="Triangle" transform="translate(10.072788, 7.773151) rotate(-180.000000) translate(-10.072788, -7.773151) " points="19.9471393 15.3441416 0.198436894 15.3441416 10.0727881 0.202159636"></polygon>
+										</g>
+										<path d="M34.5,0.205479452 L34.5,42.6704864" id="Line" stroke-width="4" stroke-linecap="round"></path>
+										<polyline id="Path-3" stroke-width="4" stroke-linecap="round" points="0 41.6704323 1.07493309e-15 59.7188162 68.8507484 59.7188162 68.8507484 41.0958904"></polyline>
+									</g>
+								</g>
+							</g>
+						</g>
+					</svg>
+				</div>
+				<span>Télécharger</span>
+			</a>
+			<div class="btn-share">
+				<div class="btn">
+					<svg width="57px" height="60px" viewBox="0 0 57 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="04_share" transform="translate(-446.000000, -1056.000000)">
+								<g id="Group-6" transform="translate(406.000000, 1014.000000)">
+									<g id="Group-5" transform="translate(40.000000, 42.000000)">
+										<polyline id="Path-4" stroke="#FF0606" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="51.0882408 5.14285714 5.95522388 29.8590231 51.3491713 54.3923488"></polyline>
+										<ellipse id="Oval" fill="#FF0606" cx="5.95522388" cy="30" rx="5.95522388" ry="6"></ellipse>
+										<ellipse id="Oval-Copy" fill="#FF0606" cx="51.0447761" cy="6" rx="5.95522388" ry="6"></ellipse>
+										<ellipse id="Oval-Copy-2" fill="#FF0606" cx="51.0447761" cy="54" rx="5.95522388" ry="6"></ellipse>
+									</g>
+								</g>
+							</g>
+						</g>
+					</svg>
+				</div>
+				<span>Partager</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- scripts to load -->
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	<script src="js/app_client.js"></script>
+
+</body>
+</html>
